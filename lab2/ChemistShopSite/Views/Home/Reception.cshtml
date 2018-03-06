@@ -1,0 +1,59 @@
+﻿@{
+    ViewData["Title"] = "Reception";
+}
+
+@model ChemistShopSite.Models.Reception
+
+<img src="~/images/apteka.jpg" />
+<h1>Medicaments</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Medicament</th>
+            <th>Receipt Date</th>
+            <th>Count</th>
+            <th>Order Cost</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            List<Reception> receptions = (List<Reception>)ViewData["receptions"];
+            foreach (var item in receptions)
+            {
+                <tr>
+                    <td>@item.MedicamentName</td>
+                    <td>@item.ReceiptDate</td>
+                    <td>@item.Count</td>
+                    <td>@item.OrderCost</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+@using (Html.BeginForm("AddReception", "Home", FormMethod.Post))
+{
+    <p>
+        <label>Name</label>
+        @Html.EditorFor(x => x.MedicamentName)
+    </p>
+
+    <p>
+        <label>Receipt Date</label>
+        <input type="date" name="ReceiptDate" />
+    </p>
+
+    <p>
+        <label>Count</label>
+        @Html.EditorFor(x => x.Count)
+    </p>
+
+    <p>
+        <label>Order cost</label>
+        @Html.EditorFor(x => x.OrderCost)
+    </p>
+
+    <p>
+        <input type="submit" value="Send" />
+    </p>
+}
