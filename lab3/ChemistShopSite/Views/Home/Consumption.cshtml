@@ -1,0 +1,92 @@
+﻿@{
+    ViewData["Title"] = "Consumption";
+}
+
+@model ChemistShopSite.Models.Consumption
+
+<img src="~/images/apteka.jpg" />
+<h1>Consumptions</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Medicament</th>
+            <th>Realisation Date</th>
+            <th>Count</th>
+            <th>Order Cost</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            List<Consumption> consumptions = (List<Consumption>)ViewData["consumptions"];
+            foreach (var item in consumptions)
+            {
+                List<Medicament> medicaments = (List<Medicament>)ViewData["medicaments"];
+                string tmp = "";
+                foreach (var med in medicaments)
+                {
+                    if (item.MedicamentID == med.Id)
+                    {
+                        tmp = med.MedicamentName;
+                    }
+                }
+
+                <tr>
+                    <td>@tmp</td>
+                    <td>@item.RealisationDate</td>
+                    <td>@item.Count</td>
+                    <td>@item.RealisationCost</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+@using (Html.BeginForm("AddConsumption", "Home", FormMethod.Post))
+{
+    <p>
+        <label>Medicament</label>
+        <select name="MedicamentID">
+            {
+            @{
+                List<Medicament> medicaments = (List<Medicament>)ViewData["medicaments"];
+                foreach (var item in medicaments)
+                {
+                    <option value=@item.Id>@item.MedicamentName</option>
+                }
+            }
+            }
+        </select>
+    </p>
+
+    <p>
+        <label>RealisationDate</label>
+        <input type="date" name="RealisationDate" />
+    </p>
+
+    <p>
+        <label>Count</label>
+        @Html.EditorFor(x => x.Count)
+    </p>
+
+    <p>
+        <label>Order cost</label>
+        @Html.EditorFor(x => x.RealisationCost)
+    </p>
+
+    <p>
+        <input type="submit" value="Send" />
+    </p>
+}
+
+@{
+    if (@ViewData["conFromMemory"] != null)
+    {
+        ChemistShopSite.Models.Consumption conFromMemory = (ChemistShopSite.Models.Consumption)ViewData["conFromMemory"];
+        <div class="infoMemory">
+            @Html.DisplayNameFor(x => x.Id):&nbsp @conFromMemory.Id.ToString();<br />
+            @Html.DisplayNameFor(x => x.MedicamentID):&nbsp @conFromMemory.MedicamentID.ToString();<br />
+            @Html.DisplayNameFor(x => x.RealisationDate):&nbsp @conFromMemory.RealisationDate.ToString();<br />
+            @Html.DisplayNameFor(x => x.RealisationCost):&nbsp @conFromMemory.RealisationCost.ToString();<br />
+        </div>
+    }
+}

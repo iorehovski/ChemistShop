@@ -1,0 +1,21 @@
+[0313/185735.364:ERROR:process_info.cc(380)] UncheckedAllocate
+[0313/190249.525:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.526:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.526:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.526:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.526:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.527:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.527:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.527:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.527:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.527:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.527:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.527:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.527:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.527:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.527:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.527:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.527:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.527:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.527:ERROR:exception_snapshot_win.cc(88)] thread ID 6796 not found in process
+[0313/190249.527:WARNING:crash_report_exception_handler.cc(62)] ProcessSnapshotWin::Initialize failed

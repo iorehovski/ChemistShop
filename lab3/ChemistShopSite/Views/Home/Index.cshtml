@@ -1,0 +1,114 @@
+﻿@{
+    ViewData["Title"] = "Chemist shop";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model ChemistShopSite.Models.Medicament
+
+<img src="~/images/apteka.jpg" />
+<h1>Medicaments</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Producer</th>
+            <th>Storage</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            List<Medicament> medicaments = (List<Medicament>)ViewData["medicaments"];
+            foreach (var item in medicaments)
+            {
+                <tr>
+                    <td>@item.MedicamentName</td>
+                    <td>@item.Manufacturer</td>
+                    <td>@item.Storage</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<button id="getTime">get request</button>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script>
+    $("#getTime").on("click", function () {
+        $.ajax({
+            url: "Home/GetCurrentDate",
+            type: "GET",
+            dataType: 'text',
+            success: function (date) {
+                alert("today is: " + date)
+            }
+        });
+    });
+</script>
+
+@using (Html.BeginForm("AddMedicament", "Home", FormMethod.Post))
+{
+<p>
+    <label>Name</label>
+    @{
+        Medicament medFromCookie = (Medicament)ViewData["medFromCookie"];
+        if (medFromCookie != null)
+        {
+            @Html.TextBox("MedicamentName", medFromCookie.MedicamentName);
+
+        }
+        else
+        {
+            @Html.TextBox("MedicamentName");
+
+        }
+    }
+
+    @*@Html.EditorFor(x => x.MedicamentName, "1212s3")*@
+
+</p>
+    <p>
+        <label>Producer</label>
+        @*@Html.EditorFor(x => x.Manufacturer)*@
+        @{
+            if (medFromCookie != null)
+            {
+                @Html.TextBox("Manufacturer", medFromCookie.Manufacturer);
+            }
+            else
+            {
+                @Html.TextBox("Manufacturer");
+            }
+         }
+    
+    </p>
+    <p>
+        <label>Storage</label>
+        <select name="Storage">
+            {
+                @{
+                    List<String> list = (List<String>)ViewData["storages"];
+                    foreach (var item in list)
+                    {
+                        <option value=@item>@item</option>
+                    }
+                }
+            }
+        </select>
+    </p>
+    <p>
+        <input type="submit" value="Send" />
+    </p>
+}
+
+@{
+    if (@ViewData["medFromMemory"] != null)
+    {
+        ChemistShopSite.Models.Medicament medFromMemory = (ChemistShopSite.Models.Medicament)ViewData["medFromMemory"];
+        <div class="infoMemory">
+            @Html.DisplayNameFor(x => x.Id):&nbsp @medFromMemory.Id.ToString();<br />
+            @Html.DisplayNameFor(x => x.MedicamentName):&nbsp @medFromMemory.MedicamentName.ToString();<br />
+            @Html.DisplayNameFor(x => x.Manufacturer):&nbsp @medFromMemory.Manufacturer.ToString();<br />
+            @Html.DisplayNameFor(x => x.Storage):&nbsp @medFromMemory.Storage.ToString();<br />
+        </div>
+    }
+}
