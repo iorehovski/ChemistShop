@@ -1,0 +1,40 @@
+[0313/185735.364:ERROR:process_info.cc(380)] UncheckedAllocate
+[0313/190249.525:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.526:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.526:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.526:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.526:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.527:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.527:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.527:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.527:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.527:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.527:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.527:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.527:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.527:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.527:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.527:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.527:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.527:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0313/190249.527:ERROR:exception_snapshot_win.cc(88)] thread ID 6796 not found in process
+[0313/190249.527:WARNING:crash_report_exception_handler.cc(62)] ProcessSnapshotWin::Initialize failed
+[0418/090359.391:ERROR:process_info.cc(359)] UncheckedAllocate
+[0418/090409.210:ERROR:process_info.cc(359)] UncheckedAllocate
+[0418/090546.750:ERROR:process_info.cc(359)] UncheckedAllocate
+[0418/090546.791:ERROR:process_info.cc(359)] UncheckedAllocate
+[0418/090619.619:ERROR:process_info.cc(359)] UncheckedAllocate
+[0418/090642.084:ERROR:process_info.cc(359)] UncheckedAllocate
+[0418/090702.254:ERROR:process_info.cc(359)] UncheckedAllocate
+[0418/091206.397:ERROR:process_info.cc(359)] UncheckedAllocate
+[0418/091454.203:ERROR:process_info.cc(359)] UncheckedAllocate
+[0418/092323.805:ERROR:process_info.cc(359)] UncheckedAllocate
+[0421/121351.752:ERROR:process_info.cc(359)] UncheckedAllocate
+[0421/121405.606:ERROR:process_info.cc(359)] UncheckedAllocate
+[0421/122413.014:ERROR:process_info.cc(359)] UncheckedAllocate
+[0421/122513.264:ERROR:process_info.cc(359)] UncheckedAllocate
+[0421/123300.248:ERROR:process_info.cc(359)] UncheckedAllocate
+[0421/123302.996:ERROR:process_info.cc(359)] UncheckedAllocate
+[0422/135642.353:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: Попытка доступа к процессу, выполняющему процедуру завершения. (0xc000010a)
+[0422/140815.885:ERROR:process_info.cc(359)] UncheckedAllocate
+[0424/211250.190:ERROR:process_info.cc(359)] UncheckedAllocate
