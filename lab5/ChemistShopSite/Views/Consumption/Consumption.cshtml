@@ -1,0 +1,189 @@
+﻿@{
+    ViewData["Title"] = "Consumption";
+}
+
+@using ChemistShopSite.ViewModels
+
+@model ConsumptionViewModel
+
+<img src="~/images/apteka.jpg" />
+<h1>Consumptions</h1>
+
+@using (Html.BeginForm("Consumption", "Consumption", FormMethod.Get))
+{
+    <p>
+        <label>Medicament Name</label>
+        @Html.TextBox("MedicamentName")
+        <input type="submit" value="Filter" />
+    </p>
+}
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                <a asp-action="Consumption" asp-route-conSortOrder="@ViewBag.NameSort">
+                    Medicament Name
+                </a>
+            </th>
+            <th>
+                <a asp-action="Consumption" asp-route-conSortOrder="@ViewBag.DateSort">
+                    Realisation Date
+                </a>
+            </th>
+            <th>
+                <a asp-action="Consumption" asp-route-conSortOrder="@ViewBag.CountSort">
+                    Count
+                </a>
+            </th>
+            <th>
+                <a asp-action="Consumption" asp-route-conSortOrder="@ViewBag.CostSort">
+                    Realization Cost
+                </a>
+            </th>
+            <th class="act">
+                <span>Action</span>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            List<Consumption> consumptions = (List<Consumption>)ViewData["consumptions"];
+            foreach (var item in Model.Consumptions)//consumptions)
+            {
+                List<Medicament> medicaments = (List<Medicament>)ViewData["medicaments"];
+                string tmp = "";
+                foreach (var med in medicaments)
+                {
+                    if (item.MedicamentID == med.Id)
+                    {
+                        tmp = med.MedicamentName;
+                    }
+                }
+
+                <tr>
+                    <td>@tmp</td>
+                    <td>@item.RealisationDate</td>
+                    <td>@item.Count</td>
+                    <td>@item.RealisationCost</td>
+                    <td class="act">
+                        <form asp-action="Delete" asp-route-id="@item.Id" method="post">
+                            <a class="btn btn-sm btn-primary" asp-action="Edit" asp-route-id="@item.Id">Изменить</a>
+                            <button type="submit" class="btn btn-sm btn-danger">
+                                Удалить
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+@if (Model.PageViewModel.HasPreviousPage)
+{
+    <a asp-action="Consumption"
+       asp-route-page="@(Model.PageViewModel.PageNumber - 1)"
+       class="btn btn-default btn">
+        <i class="glyphicon glyphicon-chevron-left"></i>
+        Назад
+    </a>
+}
+
+@if (Model.PageViewModel.HasNextPage)
+{
+    <a asp-action="Consumption"
+       asp-route-page="@(Model.PageViewModel.PageNumber + 1)"
+       class="btn btn-default btn">
+        Вперед
+        <i class="glyphicon glyphicon-chevron-right"></i>
+    </a>
+}
+
+@using (Html.BeginForm("AddConsumption", "Consumption", FormMethod.Post))
+{
+    <p>
+        <label>Medicament</label>
+        <select name="MedicamentID">
+            {
+            @{
+                Consumption conSession = (Consumption)ViewData["conSession"];
+                List<Medicament> medicaments = (List<Medicament>)ViewData["medicaments"];
+                foreach (var item in medicaments)
+                {
+                    if (conSession != null && conSession.MedicamentID == item.Id)
+                    {
+                        <option selected value=@item.Id>@item.MedicamentName</option>
+                    }
+                    else
+                    {
+                        <option value=@item.Id>@item.MedicamentName</option>
+                    }
+                }
+            }
+            }
+        </select>
+    </p>
+
+    <p>
+        <label>RealisationDate</label>
+        @{
+            if (conSession != null)
+            {
+                DateTime tmp = Convert.ToDateTime(conSession.RealisationDate);
+                string n = tmp.ToString("yyyy-MM-dd");
+                <input type="date" name="RealisationDate" value=@n />
+            }
+            else
+            {
+                <input type="date" name="RealisationDate" />
+            }
+        }
+
+    </p>
+
+    <p>
+        <label>Count</label>
+        @{
+            if (conSession != null)
+            {
+                @Html.TextBox("Count", conSession.Count)
+            }
+            else
+            {
+                @Html.TextBox("Count")
+            }
+        }
+    </p>
+
+    <p>
+        <label>Realisation Cost</label>
+        @{
+            if (conSession != null)
+            {
+                @Html.TextBox("RealisationCost", conSession.RealisationCost)
+            }
+            else
+            {
+                @Html.TextBox("RealisationCost")
+            }
+        }
+    </p>
+
+    <p>
+        <input type="submit" value="Send" />
+    </p>
+}
+
+@*@{
+        if (@ViewData["conFromMemory"] != null)
+        {
+            ChemistShopSite.Models.Consumption conFromMemory = (ChemistShopSite.Models.Consumption)ViewData["conFromMemory"];
+            <div class="infoMemory">
+                @Html.DisplayNameFor(x => x.Id):&nbsp @conFromMemory.Id.ToString();<br />
+                @Html.DisplayNameFor(x => x.MedicamentID):&nbsp @conFromMemory.MedicamentID.ToString();<br />
+                @Html.DisplayNameFor(x => x.RealisationDate):&nbsp @conFromMemory.RealisationDate.ToString();<br />
+                @Html.DisplayNameFor(x => x.RealisationCost):&nbsp @conFromMemory.RealisationCost.ToString();<br />
+            </div>
+        }
+    }*@

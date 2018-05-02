@@ -1,0 +1,184 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    height: 100%;
+    position: relative;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+td, th {
+    min-width: 150px;
+    max-width: 150px;
+    padding: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+}
+
+th.act, td.act {
+    min-width:200px !important;
+}
+
+thead {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+img {
+    float:left;
+    width: 120px;
+    height: 80px;
+}
+label {
+    display:inline-block;
+    min-width: 100px;
+}
+
+form[action^="/Home"], form[action^="/Reception"], form[action^="/Consumption"], form[action="/"] {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    margin-top: 50px;
+}
+
+form[action^="/Home/Edit"], form[action^="/Reception/Edit"], form[action^="/Consumption/Edit"] {
+    position: relative !important;
+}
+
+form[method="get"] {
+    position: absolute;
+    top: 70px;
+    left: 280px;
+}
+input {
+    margin: 5px;
+}
+/*form[method="get"][action^="/"] {
+    position: absolute;
+    top: 100px;
+    left: 280px;
+}*/
+form[action="/Account/Register"], form[action="/Account/Login"] {
+    position: absolute;
+    top: 80px;
+    left: 100px;
+}
+
+td > form[method="post"] {
+    position:relative !important;
+    top: 0;
+    left:0;
+    margin-top: 0 !important;
+}
+
+#createUser {
+    margin-left: 100px;
+    margin-top: 20px;
+}
+table {
+    margin: 50px 20px 20px 0px;
+}
+
+thead, tbody {
+    display: block;
+}
+
+.container {
+    /*margin: 50px;*/
+}
+
+#logBlock {
+    position:absolute;
+    width: 300px;
+    top: 10px;
+    right:100px;
+}
+#logBlock > div {
+    display:inline-block;
+}
+
+/*tr :nth-child(2) {
+    width:200px;
+}
+tr :nth-child(1) {
+    width: 200px;
+}*/
+tbody {
+    margin-top: -2px;
+    max-height: 380px;
+    overflow-x: auto;
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    text-align:center;
+    background:white;
+}
+
+#getTime {
+    position: fixed;
+    right: 100px;
+    bottom: 100px;
+    /*display: none;*/
+}
+
+.infoMemory {
+    position: absolute;
+    right: 100px;
+    bottom:10px;
+}
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+
+    .infoMemory {
+        display: none;
+    }
+
+    table {
+        margin-top: 250px;
+    }
+
+    form[action="/"], form[action^="/Reception"], form[action^="/Consumption"] {
+        position: absolute;
+        top: 30px;
+        right: 50px;
+        margin-top: 50px;
+    }
+    form[method="get"] {
+        position: absolute;
+        top: 270px;
+    }
+}

@@ -1,0 +1,7 @@
+[0425/090556.077:ERROR:http_transport_win.cc(273)] WinHttpSendRequest: Произошла ошибка безопасности (0x2f8f)
+[0501/105729.538:ERROR:process_info.cc(359)] UncheckedAllocate
+[0501/110009.220:ERROR:process_info.cc(359)] UncheckedAllocate
+[0501/110423.297:ERROR:process_info.cc(359)] UncheckedAllocate
+[0501/110424.068:ERROR:process_info.cc(359)] UncheckedAllocate
+[0501/111925.619:ERROR:process_info.cc(359)] UncheckedAllocate
+[0501/121431.547:WARNING:minidump_to_upload_parameters.cc(66)] duplicate annotation name metrics_client_id, discarding value 5d25d398bee54edcaa7a7ab497081f8c

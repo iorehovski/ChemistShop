@@ -1,0 +1,32 @@
+﻿@model ChemistShopSite.Models.Consumption
+@{
+    ViewData["Title"] = "Edit Consumption";
+}
+
+
+@using (Html.BeginForm("Edit", "Consumption", FormMethod.Post))
+{
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="form-group">
+        <input type="hidden" asp-for="Id" />
+    </div>
+    <div class="form-group">
+        <label asp-for="RealisationDate" class="control-label">Realisation Date</label>
+        @{ 
+            DateTime tmp = Convert.ToDateTime(Model.RealisationDate);
+            string n = tmp.ToString("yyyy-MM-dd");
+        }
+        <input type="date" asp-for="RealisationDate" class="form-control" value="@n"/>
+    </div>
+    <div class="form-group">
+        <label asp-for="Count" class="control-label">Count</label>
+        <input type="text" asp-for="Count" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="RealisationCost" class="control-label">Realisation Cost</label>
+        <input type="text" asp-for="RealisationCost" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-success" />
+    </div>
+}
