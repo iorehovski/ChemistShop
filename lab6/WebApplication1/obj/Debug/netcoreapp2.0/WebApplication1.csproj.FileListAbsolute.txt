@@ -1,0 +1,11 @@
+C:\Users\ioreh\Dropbox\labs\3 course\2 semestr\ИГИ\ChemistShop\lab6\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.deps.json
+C:\Users\ioreh\Dropbox\labs\3 course\2 semestr\ИГИ\ChemistShop\lab6\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.runtimeconfig.json
+C:\Users\ioreh\Dropbox\labs\3 course\2 semestr\ИГИ\ChemistShop\lab6\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.runtimeconfig.dev.json
+C:\Users\ioreh\Dropbox\labs\3 course\2 semestr\ИГИ\ChemistShop\lab6\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.dll
+C:\Users\ioreh\Dropbox\labs\3 course\2 semestr\ИГИ\ChemistShop\lab6\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.csprojResolveAssemblyReference.cache
+C:\Users\ioreh\Dropbox\labs\3 course\2 semestr\ИГИ\ChemistShop\lab6\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.csproj.CoreCompileInputs.cache
+C:\Users\ioreh\Dropbox\labs\3 course\2 semestr\ИГИ\ChemistShop\lab6\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.AssemblyInfoInputs.cache
+C:\Users\ioreh\Dropbox\labs\3 course\2 semestr\ИГИ\ChemistShop\lab6\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.AssemblyInfo.cs
+C:\Users\ioreh\Dropbox\labs\3 course\2 semestr\ИГИ\ChemistShop\lab6\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.pdb
+C:\Users\ioreh\Dropbox\labs\3 course\2 semestr\ИГИ\ChemistShop\lab6\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.dll
+C:\Users\ioreh\Dropbox\labs\3 course\2 semestr\ИГИ\ChemistShop\lab6\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.pdb

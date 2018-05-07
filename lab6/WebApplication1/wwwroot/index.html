@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Chemist shop</title>
+    <link href="/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <script src="/jquery/dist/jquery.js"></script>
+    <style type="text/css">
+        h1 {
+            margin-left: 100px;
+        }
+        tbody {
+            height: 300px;
+            overflow-y: scroll;
+        }
+        thead, tbody {
+            display: block;
+        }
+        td, th {
+            min-width: 200px;
+            padding: 10px;
+        }
+
+        thead {
+            font-size: 20px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <h1>Medicaments</h1>
+    <div class="container body-content">
+        <div id="errors"></div>
+        <form name="medicament">
+            <input type="hidden" name="id" value="0" />
+            <div>
+                <label for="medName">Name</label>
+                <input class="form-control" type="text" name="medName" value="">
+                <span class="field-validation-valid" data-valmsg-for="medName" data-valmsg-replace="true"></span>
+            </div>
+            <div>
+                <label for="manufacturer">Producer</label>
+                <input class="form-control" type="text" name="manufacturer" value="">
+                <span class="field-validation-valid" data-valmsg-for="manufacturer" data-valmsg-replace="true"></span>
+            </div>
+            <div>
+                <label for="storage">Storage</label>
+                <select class="form-control" name="storage">
+                    <option class="list-group-item" value="Минск-1">Минск-1</option>
+                    <option class="list-group-item" value="Гомель-1">Гомель-1</option>
+                    <option class="list-group-item" value="Гродно-1">Гродно-1</option>
+                    <option class="list-group-item" value="Минск-2">Минск-2</option>
+                    <option class="list-group-item" value="Гомель-2">Гомель-2</option>
+                    <option class="list-group-item" value="Гродно-2">Гродно-2</option>
+                </select>
+            </div>
+            <div class="panel-body">
+                <input type="submit" class="btn btn-sm btn-primary" value="Save">
+                <a id="reset" class="btn btn-sm btn-primary">Reset</a>
+            </div>
+        </form>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Producer</th>
+                    <th>Storage</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+    </div>
+    
+    <script src="./events.js"></script>
+</body>
+</html>
