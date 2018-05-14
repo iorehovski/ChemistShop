@@ -18,7 +18,7 @@ namespace ChemistShopSite.Helpers
                 result += $"<td>{item.MedicamentName}</td>";
                 result += $"<td>{item.Manufacturer}</td>";
                 result += $"<td>{item.Storage}</td>";
-                result += $"<td class=\"act\"><form asp-action=\"Delete\" asp-route-id=\""+ item.Id +"\" method=\"post\"><a class=\"btn btn-sm btn-primary\" asp-action=\"Edit\" asp-route-id=\"" + item.Id + "\">Изменить</a><button type = \"submit\" class=\"btn btn-sm btn-danger\">Удалить</button></form></td>";
+                result += $"<td class=\"act\"><form action=\"/Home/Delete/ "+item.Id + "\" method=\"post\"><a class=\"btn btn-sm btn-primary\" href=\"/Home/Edit/" + item.Id + "\">Изменить</a><button type = \"submit\" class=\"btn btn-sm btn-danger\">Удалить</button></form></td>";
                 result += "</tr>";
             }
             return new HtmlString(result);

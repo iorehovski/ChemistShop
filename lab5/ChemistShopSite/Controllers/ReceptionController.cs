@@ -74,9 +74,7 @@ namespace ChemistShopSite.Controllers
             {
                 IQueryable<Reception> receptions = db.Receptions.Include(x => x.Medicine);
 
-                int count = receptions.Count();
-                receptions = receptions.Skip((page - 1) * pageSize).Take(pageSize);
-
+               
 
                 if (!String.IsNullOrEmpty(MedicamentName))
                 {
@@ -115,6 +113,10 @@ namespace ChemistShopSite.Controllers
                         receptions = receptions.OrderBy(s => s.Medicine.MedicamentName);
                         break;
                 }
+
+
+                int count = receptions.Count();
+                receptions = receptions.Skip((page - 1) * pageSize).Take(pageSize);
 
                 PageViewModel pageViewModel = new PageViewModel(count, page, pageSize);
                 ReceptionViewModel viewModel = new ReceptionViewModel

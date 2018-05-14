@@ -63,8 +63,7 @@ namespace ChemistShopSite.Controllers
 
                 IQueryable<Medicament> medicaments = db.Medicaments;
 
-                int count = medicaments.Count();
-                medicaments = medicaments.Skip((page - 1) * pageSize).Take(pageSize);
+                
 
 
                 if (!String.IsNullOrEmpty(MedicamentName))
@@ -97,6 +96,9 @@ namespace ChemistShopSite.Controllers
                         medicaments = medicaments.OrderBy(s => s.MedicamentName);
                         break;
                 }
+
+                int count = medicaments.Count();
+                medicaments = medicaments.Skip((page - 1) * pageSize).Take(pageSize);
 
                 PageViewModel pageViewModel = new PageViewModel(count, page, pageSize);
                 IndexViewModel viewModel = new IndexViewModel

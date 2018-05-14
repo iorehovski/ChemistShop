@@ -58,10 +58,7 @@ namespace ChemistShopSite.Controllers
             {
                 IQueryable<Consumption> consumptions = db.Consumptions.Include(x => x.Medicament);
 
-                int count = consumptions.Count();
-                consumptions = consumptions.Skip((page - 1) * pageSize).Take(pageSize);
-
-
+                
                 if (!String.IsNullOrEmpty(MedicamentName))
                 {
                     consumptions = consumptions.Where(p => p.Medicament.MedicamentName.Contains(MedicamentName));
@@ -100,6 +97,11 @@ namespace ChemistShopSite.Controllers
                         consumptions = consumptions.OrderBy(s => s.Medicament.MedicamentName);
                         break;
                 }
+
+                int count = consumptions.Count();
+                consumptions = consumptions.Skip((page - 1) * pageSize).Take(pageSize);
+
+
 
                 PageViewModel pageViewModel = new PageViewModel(count, page, pageSize);
                 ConsumptionViewModel viewModel = new ConsumptionViewModel
